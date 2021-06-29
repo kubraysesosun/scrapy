@@ -5,9 +5,9 @@ from time import sleep
 
 class Salvin(Spider):   
     name = "salvin"
-    
+    start_urls = ["www.salvin.com"]
     def __init__(self):
-        self.url="www.salvin.com"
+        # self.url="www.salvin.com"
         self.open_driver()
         
     # def start_request(self):
@@ -16,6 +16,6 @@ class Salvin(Spider):
     
     def open_driver(self):
         driver = webdriver.Chrome(ChromeDriverManager().install())
-        driver.get(self.url)
+        # driver.get(self.url)
         sleep(5)
     
