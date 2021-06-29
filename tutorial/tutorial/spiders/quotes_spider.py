@@ -1,5 +1,6 @@
 from scrapy import Request, Spider
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
 
 class Salvin(Spider):   
@@ -14,7 +15,7 @@ class Salvin(Spider):
     #     yield Request(url, self.parse)
     
     def open_driver(self):
-        driver = webdriver.Firefox()
+        driver = webdriver.Chrome(ChromeDriverManager().install())
         driver.get(self.url)
-        sleep(3)
+        sleep(5)
     
